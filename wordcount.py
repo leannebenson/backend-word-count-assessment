@@ -47,7 +47,7 @@ def print_words(filename):
     count = create_word_dict(filename)
     words = sorted(count.keys())
     for word in words:
-        print (word, count[word])
+        print (word, ' : ', count[word])
     return
 
 def return_count(word_count):
@@ -56,7 +56,7 @@ def return_count(word_count):
 def print_top(filename):
     count = create_word_dict(filename)
     words = sorted(count.items(), key=return_count, reverse=True)
-    for word in words[:30]:
+    for word in words[:20]:
         print(word[0], ' : ', word[1])
     return
 

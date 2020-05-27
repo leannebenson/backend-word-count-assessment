@@ -31,8 +31,6 @@ import sys
 
 
 def create_word_dict(filename):
-    """Returns a word/count dict for the given file."""
-    # Your code here //refactor with open
     count = {}
     with open(filename) as opened_file:
         for words in opened_file:
@@ -46,10 +44,6 @@ def create_word_dict(filename):
 
 
 def print_words(filename):
-    """Prints one per line '<word> : <count>', sorted
-    by word for the given file.
-    """
-    # Your code here
     count = create_word_dict(filename)
     words = sorted(count.keys())
     for word in words:
@@ -60,8 +54,6 @@ def return_count(word_count):
     return word_count[1]
 
 def print_top(filename):
-    """Prints the top count listing for the given file."""
-    # Your code here
     count = create_word_dict(filename)
     words = sorted(count.items(), key=return_count, reverse=True)
     for word in words[:30]:
